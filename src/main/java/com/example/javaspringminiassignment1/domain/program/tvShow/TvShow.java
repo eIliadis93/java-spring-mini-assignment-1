@@ -1,17 +1,17 @@
 package com.example.javaspringminiassignment1.domain.program.tvShow;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-import lombok.experimental.SuperBuilder;
+import com.example.javaspringminiassignment1.domain.program.Program;
+import lombok.*;
 
 import java.util.List;
 
 @Getter
 @Setter
-@SuperBuilder
+@Builder
 @ToString(callSuper = true)
-public class TvShow {
+@AllArgsConstructor
+@NoArgsConstructor
+public class TvShow extends Program {
 
     private List<Season> seasons;
 }

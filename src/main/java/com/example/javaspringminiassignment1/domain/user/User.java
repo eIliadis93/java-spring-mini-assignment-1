@@ -2,10 +2,10 @@ package com.example.javaspringminiassignment1.domain.user;
 
 import com.example.javaspringminiassignment1.domain.BaseModel;
 import com.example.javaspringminiassignment1.domain.program.Program;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import lombok.experimental.SuperBuilder;
 
 import java.time.LocalDate;
 import java.time.Period;
@@ -14,7 +14,7 @@ import java.util.List;
 @Getter
 @Setter
 @ToString(callSuper = true)
-@SuperBuilder
+@Builder
 public class User extends BaseModel {
 
     private String firstName;
