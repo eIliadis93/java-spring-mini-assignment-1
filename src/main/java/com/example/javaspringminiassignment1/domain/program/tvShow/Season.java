@@ -1,7 +1,6 @@
 package com.example.javaspringminiassignment1.domain.program.tvShow;
 
 import com.example.javaspringminiassignment1.domain.BaseModel;
-import com.example.javaspringminiassignment1.domain.program.Crew.Crew;
 import com.example.javaspringminiassignment1.domain.program.Crew.Director;
 import lombok.*;
 
@@ -18,5 +17,5 @@ public class Season extends BaseModel {
     private String seasonTitle;
     private List<Episode> episodes;
     private Director director;
-    private List<Crew> crew;
+
 }
