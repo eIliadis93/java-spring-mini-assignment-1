@@ -1,4 +1,4 @@
-package com.example.javaspringminiassignment1.domain;
+package com.acmeflix.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

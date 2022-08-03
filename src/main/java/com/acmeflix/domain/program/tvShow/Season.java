@@ -1,7 +1,7 @@
-package com.example.javaspringminiassignment1.domain.program.tvShow;
+package com.acmeflix.domain.program.tvShow;
 
-import com.example.javaspringminiassignment1.domain.BaseModel;
-import com.example.javaspringminiassignment1.domain.program.Crew.Director;
+import com.acmeflix.domain.BaseModel;
+import com.acmeflix.domain.program.Crew.Director;
 import lombok.*;
 
 import java.util.List;

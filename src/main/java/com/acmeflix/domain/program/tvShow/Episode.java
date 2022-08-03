@@ -1,7 +1,7 @@
-package com.example.javaspringminiassignment1.domain.program.tvShow;
+package com.acmeflix.domain.program.tvShow;
 
-import com.example.javaspringminiassignment1.domain.BaseModel;
-import com.example.javaspringminiassignment1.domain.program.Crew.Actor;
+import com.acmeflix.domain.BaseModel;
+import com.acmeflix.domain.program.Crew.Actor;
 import lombok.*;
 
 import java.math.BigDecimal;

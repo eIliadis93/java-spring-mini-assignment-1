@@ -1,6 +1,6 @@
-package com.example.javaspringminiassignment1.domain.program.tvShow;
+package com.acmeflix.domain.program.tvShow;
 
-import com.example.javaspringminiassignment1.domain.program.Program;
+import com.acmeflix.domain.program.Program;
 import lombok.*;
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.example.javaspringminiassignment1.domain.program;
+package com.acmeflix.domain.program;
 
 public enum Genre {
     SciFi,

@@ -1,6 +1,6 @@
-package com.example.javaspringminiassignment1.domain.program.Crew;
+package com.acmeflix.domain.program.Crew;
 
-import com.example.javaspringminiassignment1.domain.BaseModel;
+import com.acmeflix.domain.BaseModel;
 import lombok.*;
 
 import java.time.LocalDate;

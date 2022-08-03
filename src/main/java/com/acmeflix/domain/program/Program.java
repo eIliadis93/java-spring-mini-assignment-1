@@ -1,6 +1,6 @@
-package com.example.javaspringminiassignment1.domain.program;
+package com.acmeflix.domain.program;
 
-import com.example.javaspringminiassignment1.domain.BaseModel;
+import com.acmeflix.domain.BaseModel;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 

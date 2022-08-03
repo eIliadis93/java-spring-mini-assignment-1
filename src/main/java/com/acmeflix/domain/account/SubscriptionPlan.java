@@ -1,4 +1,4 @@
-package com.example.javaspringminiassignment1.domain.user;
+package com.acmeflix.domain.account;
 
 import lombok.Getter;
 
