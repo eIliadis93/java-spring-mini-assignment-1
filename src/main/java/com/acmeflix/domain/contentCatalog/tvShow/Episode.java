@@ -1,7 +1,7 @@
-package com.acmeflix.domain.program.tvShow;
+package com.acmeflix.domain.contentCatalog.tvShow;
 
 import com.acmeflix.domain.BaseModel;
-import com.acmeflix.domain.program.Crew.Actor;
+import com.acmeflix.domain.contentCatalog.Cast.Actor;
 import lombok.*;
 
 import java.math.BigDecimal;
@@ -16,6 +16,6 @@ import java.util.List;
 public class Episode extends BaseModel {
 
     private String episodeTitle;
-    private BigDecimal length;
     private List<Actor> actors;
+    private int durationInMinutes;
 }

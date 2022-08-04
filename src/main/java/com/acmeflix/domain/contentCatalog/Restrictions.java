@@ -1,4 +1,4 @@
-package com.acmeflix.domain.program;
+package com.acmeflix.domain.contentCatalog;
 
 public enum Restrictions {
     SEVEN(7), THIRTEEN(13), SIXTEEN(16), EIGHTEEN(18), ALL(1000);

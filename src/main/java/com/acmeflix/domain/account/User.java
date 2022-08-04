@@ -1,6 +1,6 @@
 package com.acmeflix.domain.account;
 
-import com.acmeflix.domain.program.Program;
+import com.acmeflix.domain.contentCatalog.Content;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
@@ -21,7 +21,7 @@ public class User {
     private LocalDate dateOfBirth;
     private int age;
 
-    private List<Program> programWatched;
+    private List<Content> programWatched;
 
     public Integer getAge() {
         return Period.between(this.dateOfBirth, LocalDate.now()).getYears();

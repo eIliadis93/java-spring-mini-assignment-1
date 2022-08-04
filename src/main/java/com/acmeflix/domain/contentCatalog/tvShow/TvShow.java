@@ -1,6 +1,6 @@
-package com.acmeflix.domain.program.tvShow;
+package com.acmeflix.domain.contentCatalog.tvShow;
 
-import com.acmeflix.domain.program.Program;
+import com.acmeflix.domain.contentCatalog.Content;
 import lombok.*;
 
 import java.util.List;
@@ -11,7 +11,7 @@ import java.util.List;
 @ToString(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class TvShow extends Program {
+public class TvShow extends Content {
 
     private List<Season> seasons;
 }

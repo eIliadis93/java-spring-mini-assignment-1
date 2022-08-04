@@ -1,4 +1,4 @@
-package com.acmeflix.domain.program.Crew;
+package com.acmeflix.domain.contentCatalog.Cast;
 
 import com.acmeflix.domain.BaseModel;
 import lombok.*;
