@@ -1,9 +1,6 @@
-package com.acmeflix.domain.account;
+package com.acmeflix.domain;
 
 
-import com.acmeflix.domain.BaseModel;
-import com.acmeflix.domain.Profile;
-import com.acmeflix.domain.contentCatalog.Content;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;

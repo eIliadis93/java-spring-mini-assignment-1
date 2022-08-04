@@ -1,4 +1,4 @@
-package com.acmeflix.domain.account;
+package com.acmeflix.domain;
 
 public class DebitCard {
     private String cardNumber;

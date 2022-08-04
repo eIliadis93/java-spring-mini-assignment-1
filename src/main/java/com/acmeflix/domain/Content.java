@@ -1,11 +1,8 @@
-package com.acmeflix.domain.contentCatalog;
+package com.acmeflix.domain;
 
-import com.acmeflix.domain.BaseModel;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
-import org.springframework.format.annotation.DateTimeFormat;
 
-import java.time.DateTimeException;
 import java.util.List;
 
 @Getter

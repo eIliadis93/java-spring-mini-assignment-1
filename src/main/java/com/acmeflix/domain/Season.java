@@ -1,7 +1,5 @@
-package com.acmeflix.domain.contentCatalog.tvShow;
+package com.acmeflix.domain;
 
-import com.acmeflix.domain.BaseModel;
-import com.acmeflix.domain.contentCatalog.Cast.Director;
 import lombok.*;
 
 import java.util.List;

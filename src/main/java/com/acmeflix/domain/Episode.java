@@ -1,10 +1,7 @@
-package com.acmeflix.domain.contentCatalog.tvShow;
+package com.acmeflix.domain;
 
-import com.acmeflix.domain.BaseModel;
-import com.acmeflix.domain.contentCatalog.Cast.Actor;
 import lombok.*;
 
-import java.math.BigDecimal;
 import java.util.List;
 
 @Getter

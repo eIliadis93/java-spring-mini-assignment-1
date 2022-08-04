@@ -1,4 +1,4 @@
-package com.acmeflix.domain.contentCatalog;
+package com.acmeflix.domain;
 
 public enum Genre {
     SciFi,

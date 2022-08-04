@@ -1,7 +1,5 @@
-package com.acmeflix.domain.contentCatalog;
+package com.acmeflix.domain;
 
-import com.acmeflix.domain.contentCatalog.Cast.Actor;
-import com.acmeflix.domain.contentCatalog.Cast.Director;
 import lombok.*;
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.acmeflix.domain.account;
+package com.acmeflix.domain;
 
 import lombok.Getter;
 

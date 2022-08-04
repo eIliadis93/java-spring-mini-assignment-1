@@ -1,6 +1,5 @@
-package com.acmeflix.domain.contentCatalog.tvShow;
+package com.acmeflix.domain;
 
-import com.acmeflix.domain.contentCatalog.Content;
 import lombok.*;
 
 import java.util.List;
