@@ -19,8 +19,8 @@ public class Content extends BaseModel {
     private String title;
     private int rating;
     private String plot;
-    private List<LanguageType> language;
-    private List<LanguageType> subtitles;
+    private List<Language> language;
+    private List<Language> subtitles;
     private List<Genre> genres;
     private MaturityRating maturityRating;
     private Restrictions restrictions;
