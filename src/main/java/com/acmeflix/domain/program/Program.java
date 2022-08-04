@@ -20,6 +20,7 @@ public class Program extends BaseModel {
     private List<LanguageType> subtitles;
     private List<Genre> genres;
     private AgeRating ageRating;
+    private Restrictions restrictions;
     private List<Program> recommendations;
 
 }
