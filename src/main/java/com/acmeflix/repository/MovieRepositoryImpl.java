@@ -1,6 +1,6 @@
 package com.acmeflix.repository;
 
-import com.acmeflix.domain.program.Movie;
+import com.acmeflix.domain.contentCatalog.Movie;
 
 import java.util.LinkedHashMap;
 import java.util.List;
