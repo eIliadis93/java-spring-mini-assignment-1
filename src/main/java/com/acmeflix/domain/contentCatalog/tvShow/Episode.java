@@ -1,7 +1,7 @@
-package com.acmeflix.domain.program.tvShow;
+package com.acmeflix.domain.contentCatalog.tvShow;
 
 import com.acmeflix.domain.BaseModel;
-import com.acmeflix.domain.program.Crew.Actor;
+import com.acmeflix.domain.contentCatalog.Cast.Actor;
 import lombok.*;
 
 import java.math.BigDecimal;

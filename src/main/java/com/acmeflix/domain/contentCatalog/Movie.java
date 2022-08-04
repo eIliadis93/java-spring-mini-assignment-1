@@ -1,7 +1,7 @@
-package com.acmeflix.domain.program;
+package com.acmeflix.domain.contentCatalog;
 
-import com.acmeflix.domain.program.Crew.Actor;
-import com.acmeflix.domain.program.Crew.Director;
+import com.acmeflix.domain.contentCatalog.Cast.Actor;
+import com.acmeflix.domain.contentCatalog.Cast.Director;
 import lombok.*;
 
 import java.util.List;
@@ -12,7 +12,7 @@ import java.util.List;
 @ToString(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class Movie extends Program {
+public class Movie extends Content {
 
     private Director director;
     private List<Actor> actors;
