@@ -19,7 +19,6 @@ public class Account extends BaseModel {
     private String country;
     private DebitCard debitCard;
     private List<Profile> profiles;
-    private List<Content> programWatched;
     private boolean subscription;
     private SubscriptionPlan subscriptionPlan;
 

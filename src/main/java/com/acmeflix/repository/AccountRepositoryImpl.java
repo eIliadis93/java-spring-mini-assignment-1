@@ -1,6 +1,8 @@
 package com.acmeflix.repository;
 
 import com.acmeflix.domain.Account;
+import com.acmeflix.domain.Content;
+import com.acmeflix.domain.Profile;
 import org.springframework.stereotype.Repository;
 
 import java.util.LinkedHashMap;
@@ -29,5 +31,25 @@ public class AccountRepositoryImpl extends BaseRepositoryImpl<Account> implement
         return this.data.values().stream().filter(tmp -> tmp.getEmail().equalsIgnoreCase(email)).toList();
     }
 
+    public void updateProfile(Account account, Profile profile) {
+        profile.getName();
+        profile.getLanguage();
+        profile.getContents();
+        profile.getRestrictions();
+    }
+
+    @Override
+    public void deleteProfile(Account account, Profile profile) {
+        account.getProfiles().remove(profile);
+    }
+
+    @Override
+    public void addProfileContent(Content content, Profile profile) {
+        if (profile.getContents().contains(content)) {
+            logger.info("Content is already on the list.");
+        } else {
+            profile.getContents().add(content);
+        }
+    }
 
 }
