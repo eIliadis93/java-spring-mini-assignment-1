@@ -16,4 +16,6 @@ public class Movie extends Content {
 
     private Director director;
     private List<Actor> actors;
+    private int durationInMinutes;
+    private boolean watched;
 }

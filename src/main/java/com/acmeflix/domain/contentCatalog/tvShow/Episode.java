@@ -18,4 +18,5 @@ public class Episode extends BaseModel {
     private String episodeTitle;
     private BigDecimal length;
     private List<Actor> actors;
+    private int durationInMinutes;
 }
