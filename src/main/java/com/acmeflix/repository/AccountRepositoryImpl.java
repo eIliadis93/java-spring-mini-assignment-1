@@ -3,6 +3,8 @@ package com.acmeflix.repository;
 import com.acmeflix.domain.Account;
 import com.acmeflix.domain.Content;
 import com.acmeflix.domain.Profile;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
 import java.util.LinkedHashMap;
@@ -12,7 +14,7 @@ import java.util.concurrent.atomic.AtomicLong;
 
 @Repository("accountRepo")
 public class AccountRepositoryImpl extends BaseRepositoryImpl<Account> implements AccountRepository {
-
+    protected Logger logger = LoggerFactory.getLogger(getClass());
     private final Map<Long, Account> data = new LinkedHashMap<>();
 
     private final AtomicLong atomicLong = new AtomicLong(1);

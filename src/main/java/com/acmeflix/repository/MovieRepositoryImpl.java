@@ -1,12 +1,14 @@
 package com.acmeflix.repository;
 
 import com.acmeflix.domain.Movie;
+import org.springframework.stereotype.Repository;
 
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicLong;
 
+@Repository
 public class MovieRepositoryImpl extends BaseRepositoryImpl<Movie> implements MovieRepository {
     private final Map<Long, Movie> data = new LinkedHashMap<>();
     private final AtomicLong atomicLong = new AtomicLong(1);
