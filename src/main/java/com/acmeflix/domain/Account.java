@@ -17,7 +17,7 @@ public class Account extends BaseModel {
     private String email;
     private String phoneNumber;
     private String country;
-    private DebitCard debitCard;
+    private List<DebitCard> debitCard;
     private List<Profile> profiles;
     private boolean subscription;
     private SubscriptionPlan subscriptionPlan;

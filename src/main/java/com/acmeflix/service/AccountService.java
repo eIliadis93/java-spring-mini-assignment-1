@@ -21,4 +21,5 @@ public interface AccountService extends BaseService<Account, Long> {
 
     void addProfileContent(Content content, Profile profile);
 
+    void addDebitCard(Account account);
 }

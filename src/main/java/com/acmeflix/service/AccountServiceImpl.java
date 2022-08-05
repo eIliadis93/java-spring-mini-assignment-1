@@ -24,9 +24,8 @@ public class AccountServiceImpl extends BaseServiceImpl<Account> implements Acco
 
     @Override
     public void addProfile(Account account, Profile profile) {
-        availableSubscription(account);
-        account.getProfiles().add(profile);
-        logger.info("The profile {} has been added successfully.", profile.getName());
+        logger.info("Now creating new profile!");
+        accountRepository.addProfile(account, profile);
     }
 
     @Override
@@ -54,26 +53,14 @@ public class AccountServiceImpl extends BaseServiceImpl<Account> implements Acco
 
     @Override
     public void subscriptionPayment(Account account) {
-        if (!account.isSubscription()) {
-            account.getDebitCard();
-            account.getSubscriptionPlan();
-            account.setSubscription(true);
-        } else {
-            logger.info("This account already have an active subscription.");
-        }
+        logger.info("Starting subscription payment procedure.");
+        accountRepository.subscriptionPayment(account);
     }
 
     @Override
     public boolean availableSubscription(Account account) {
         logger.info("Checking if there is any active subscription for the account {}.", account.getId());
-        if (account.isSubscription()) {
-            logger.info("Account {} have an active subscription.", account.getId());
-            return true;
-        } else {
-            logger.info("Account {} subscription is over, subscription payment sequence initializing.", account.getId());
-            subscriptionPayment(account);
-            return false;
-        }
+        return accountRepository.availableSubscription(account);
     }
 
     @Override
@@ -94,6 +81,12 @@ public class AccountServiceImpl extends BaseServiceImpl<Account> implements Acco
             accountRepository.addProfileContent(content, profile);
             logger.info("Content list had been updated.");
         }
+    }
+
+    @Override
+    public void addDebitCard(Account account) {
+        logger.info("A new Debit Card will be added on the account {}.", account.getId());
+        accountRepository.addDebitCard(account);
     }
 
 }

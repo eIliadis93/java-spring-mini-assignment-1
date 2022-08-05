@@ -15,4 +15,12 @@ public interface AccountRepository extends BaseRepository<Account, Long> {
     void deleteProfile(Account account, Profile profile);
 
     void addProfileContent(Content content, Profile profile);
+
+    boolean availableSubscription(Account account);
+
+    void subscriptionPayment(Account account);
+
+    void addProfile(Account account, Profile profile);
+
+    void addDebitCard(Account account);
 }

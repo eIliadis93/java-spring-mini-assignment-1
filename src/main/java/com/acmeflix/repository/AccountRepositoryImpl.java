@@ -2,6 +2,7 @@ package com.acmeflix.repository;
 
 import com.acmeflix.domain.Account;
 import com.acmeflix.domain.Content;
+import com.acmeflix.domain.DebitCard;
 import com.acmeflix.domain.Profile;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -52,6 +53,50 @@ public class AccountRepositoryImpl extends BaseRepositoryImpl<Account> implement
         } else {
             profile.getContents().add(content);
         }
+    }
+
+    @Override
+    public boolean availableSubscription(Account account) {
+        if (account.isSubscription()) {
+            logger.info("Account {} have an active subscription.", account.getId());
+            return true;
+        } else {
+            logger.info("Account {} subscription is over, subscription payment sequence initializing.", account.getId());
+            subscriptionPayment(account);
+            return false;
+        }
+    }
+
+    @Override
+    public void subscriptionPayment(Account account) {
+        if (!account.isSubscription()) {
+            if (account.getDebitCard().isEmpty()) {
+                logger.info("There is not a saved payment method for the account {}, please add a payment method.", account.getId());
+                addDebitCard(account);
+            }
+            account.getDebitCard();
+            account.getSubscriptionPlan();
+            account.setSubscription(true);
+        } else {
+            logger.info("This account already have an active subscription.");
+        }
+    }
+
+    @Override
+    public void addProfile(Account account, Profile profile) {
+        availableSubscription(account);
+        account.getProfiles().add(profile);
+        logger.info("The profile {} has been added successfully.", profile.getName());
+    }
+
+    @Override
+    public void addDebitCard(Account account) {
+        DebitCard debitCard = DebitCard.builder().build();
+        if (account.getDebitCard().contains(debitCard)) {
+            new IllegalArgumentException("The follow debit card already exist on the account.");
+        }
+        account.getDebitCard().add(debitCard);
+        logger.info("Debit Card {} added as a viable payment method.", debitCard.getCardNumber());
     }
 
 }
