@@ -7,6 +7,5 @@ import lombok.*;
 @Builder
 @ToString(callSuper = true)
 @AllArgsConstructor
-@NoArgsConstructor
 public class Director extends BaseModel {
 }
