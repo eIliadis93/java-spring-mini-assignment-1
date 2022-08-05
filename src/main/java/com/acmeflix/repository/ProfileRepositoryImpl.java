@@ -12,7 +12,6 @@ import java.util.concurrent.atomic.AtomicLong;
 
 @Repository
 @RequiredArgsConstructor
-
 public class ProfileRepositoryImpl extends BaseRepositoryImpl<Profile> implements ProfileRepository {
     private final Map<Long, Profile> data = new LinkedHashMap<>();
 

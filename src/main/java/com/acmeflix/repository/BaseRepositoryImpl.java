@@ -1,6 +1,7 @@
 package com.acmeflix.repository;
 
 import com.acmeflix.domain.BaseModel;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -9,8 +10,10 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicLong;
 
-public abstract class BaseRepositoryImpl<T extends BaseModel>  implements BaseRepository<T, Long> {
+@Slf4j
+public abstract class BaseRepositoryImpl<T extends BaseModel> implements BaseRepository<T, Long> {
     public abstract Map<Long, T> getStorage();
+
     protected Logger logger = LoggerFactory.getLogger(getClass());
 
 
@@ -19,7 +22,7 @@ public abstract class BaseRepositoryImpl<T extends BaseModel>  implements BaseRe
     @Override
     public T create(final T entity) {
         final Long key;
-        key= getSequence().getAndIncrement();
+        key = getSequence().getAndIncrement();
         entity.setId(key);
         getStorage().put(key, entity);
         logger.trace("Just created entity with id : {}.", entity.getId());
@@ -34,17 +37,17 @@ public abstract class BaseRepositoryImpl<T extends BaseModel>  implements BaseRe
 
     @Override
     public void delete(final T entity) {
-        final Long id=entity.getId();
+        final Long id = entity.getId();
         deleteById(id);
         logger.trace("Just deleted entity with id : {}.", id);
     }
 
     @Override
     public void deleteById(final Long id) {
-        if(getStorage().remove(id) != null)
-            logger.trace("Just deleted entity with given id :{}",id);
+        if (getStorage().remove(id) != null)
+            logger.trace("Just deleted entity with given id :{}", id);
         else
-            logger.trace("Couldn't delete entity with given id :{}",id);
+            logger.trace("Couldn't delete entity with given id :{}", id);
 
     }
 

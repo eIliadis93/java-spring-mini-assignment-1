@@ -5,8 +5,8 @@ import com.acmeflix.domain.DebitCard;
 import com.acmeflix.domain.Profile;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
 import java.util.LinkedHashMap;
@@ -18,7 +18,10 @@ import java.util.concurrent.atomic.AtomicLong;
 @AllArgsConstructor
 @Slf4j
 public class AccountRepositoryImpl extends BaseRepositoryImpl<Account> implements AccountRepository {
-    protected Logger logger = LoggerFactory.getLogger(getClass());
+
+
+    @Autowired
+    @Qualifier("profileRepositoryImpl")
     private final ProfileRepository profileRepository;
     private final Map<Long, Account> data = new LinkedHashMap<>();
 

@@ -6,17 +6,24 @@ import com.acmeflix.service.AccountService;
 import com.acmeflix.service.ProfileService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.stereotype.Component;
+import org.springframework.context.annotation.ComponentScan;
 
 import java.util.List;
 
-@Component
+@ComponentScan
 @RequiredArgsConstructor
 @Slf4j
 public class SampleAccountCreator extends BaseComponent implements CommandLineRunner {
 
+    @Autowired
+    @Qualifier("accountServiceImpl")
     private final AccountService accountService;
+
+    @Autowired
+    @Qualifier("profileServiceImpl")
     private final ProfileService profileService;
 
     @Override

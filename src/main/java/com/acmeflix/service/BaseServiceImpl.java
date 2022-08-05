@@ -3,11 +3,13 @@ package com.acmeflix.service;
 import com.acmeflix.BaseComponent;
 import com.acmeflix.domain.BaseModel;
 import com.acmeflix.repository.BaseRepository;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+@Slf4j
 public abstract class BaseServiceImpl<T extends BaseModel> extends BaseComponent implements BaseService<T, Long> {
     public abstract BaseRepository<T, Long> getRepository();
 
@@ -50,11 +52,11 @@ public abstract class BaseServiceImpl<T extends BaseModel> extends BaseComponent
     @Override
     public boolean exists(final T item) {
 
-        if(getRepository().exists(item)) {
+        if (getRepository().exists(item)) {
             logger.trace("Item :{} exists", item);
             return true;
-        }else
-            logger.trace("Item :{} does not exists",item);
+        } else
+            logger.trace("Item :{} does not exists", item);
 
         return false;
     }
