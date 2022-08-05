@@ -1,5 +1,6 @@
 package com.acmeflix.service;
 
+import com.acmeflix.domain.Content;
 import com.acmeflix.domain.Profile;
 import com.acmeflix.repository.BaseRepository;
 import com.acmeflix.repository.ProfileRepository;
@@ -28,5 +29,15 @@ public class ProfileServiceImpl extends BaseServiceImpl<Profile> implements Prof
         }
         logger.info("Profile with name {} , found", name);
         return profiles.get(0);
+    }
+
+    @Override
+    public void addProfileContent(Content content, Profile profile) {
+        if (!profile.getAccount().isSubscription()) {
+            throw new IllegalArgumentException("You cannot watch any content without a subscription");
+        } else {
+            profileRepository.addProfileContent(content, profile);
+            logger.info("Content list had been updated.");
+        }
     }
 }

@@ -1,5 +1,6 @@
 package com.acmeflix.repository;
 
+import com.acmeflix.domain.Content;
 import com.acmeflix.domain.Profile;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
@@ -31,5 +32,14 @@ public class ProfileRepositoryImpl extends BaseRepositoryImpl<Profile> implement
     @Override
     public List<Profile> findProfileByName(String name) {
         return this.data.values().stream().filter(prof -> prof.getName().equalsIgnoreCase(name)).toList();
+    }
+
+    @Override
+    public void addProfileContent(Content content, Profile profile) {
+        if (profile.getContents().contains(content)) {
+            logger.info("Content is already on the list.");
+        } else {
+            profile.getContents().add(content);
+        }
     }
 }

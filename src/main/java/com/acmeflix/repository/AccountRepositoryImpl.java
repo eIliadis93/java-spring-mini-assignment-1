@@ -1,7 +1,6 @@
 package com.acmeflix.repository;
 
 import com.acmeflix.domain.Account;
-import com.acmeflix.domain.Content;
 import com.acmeflix.domain.DebitCard;
 import com.acmeflix.domain.Profile;
 import lombok.AllArgsConstructor;
@@ -50,17 +49,9 @@ public class AccountRepositoryImpl extends BaseRepositoryImpl<Account> implement
 
     @Override
     public void deleteProfile(Account account, Profile profile) {
-        account.getProfiles().remove(profile);
+        profileRepository.delete(profile);
     }
 
-    @Override
-    public void addProfileContent(Content content, Profile profile) {
-        if (profile.getContents().contains(content)) {
-            logger.info("Content is already on the list.");
-        } else {
-            profile.getContents().add(content);
-        }
-    }
 
     @Override
     public boolean availableSubscription(Account account) {
@@ -92,8 +83,7 @@ public class AccountRepositoryImpl extends BaseRepositoryImpl<Account> implement
     @Override
     public void addProfile(Account account, Profile profile) {
         availableSubscription(account);
-        account.getProfiles().add(profile);
-        logger.info("The profile {} has been added successfully.", profile.getName());
+        profileRepository.create(profile);
     }
 
     @Override
