@@ -4,6 +4,8 @@ import com.acmeflix.domain.Account;
 import com.acmeflix.domain.Content;
 import com.acmeflix.domain.DebitCard;
 import com.acmeflix.domain.Profile;
+import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
@@ -13,12 +15,16 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicLong;
 
-@Repository("accountRepo")
+@Repository
+@AllArgsConstructor
+@Slf4j
 public class AccountRepositoryImpl extends BaseRepositoryImpl<Account> implements AccountRepository {
     protected Logger logger = LoggerFactory.getLogger(getClass());
+    private final ProfileRepository profileRepository;
     private final Map<Long, Account> data = new LinkedHashMap<>();
 
     private final AtomicLong atomicLong = new AtomicLong(1);
+
 
     @Override
     public Map<Long, Account> getStorage() {
@@ -35,10 +41,11 @@ public class AccountRepositoryImpl extends BaseRepositoryImpl<Account> implement
     }
 
     public void updateProfile(Account account, Profile profile) {
-        profile.getName();
-        profile.getLanguage();
-        profile.getContents();
-        profile.getRestrictions();
+        if (account.getProfiles().contains(profile)) {
+            profileRepository.update(profile);
+        } else {
+            new IllegalArgumentException("This profile does not exist on the account");
+        }
     }
 
     @Override
